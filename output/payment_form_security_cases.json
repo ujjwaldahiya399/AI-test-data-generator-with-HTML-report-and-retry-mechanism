@@ -1,0 +1,18 @@
+[
+  {
+    "card_holder_name": "Robert'); DROP TABLE Payments; --",
+    "card_number": "4532015112830366",
+    "expiry_date": "12/25",
+    "cvv": "123",
+    "billing_address": "123 Main St, Anytown, USA 12345",
+    "amount": 10.99
+  },
+  {
+    "card_holder_name": "John <script>alert('XSS')</script>",
+    "card_number": "6011514433546201",
+    "expiry_date": "06/28",
+    "cvv": "456",
+    "billing_address": "456 Elm St, Othertown, USA 67890",
+    "amount": 50.0
+  }
+]

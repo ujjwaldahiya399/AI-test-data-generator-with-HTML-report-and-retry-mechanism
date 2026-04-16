@@ -1,0 +1,12 @@
+{
+  "entity": "User Registration Form",
+  "fields": [
+    {"name": "first_name", "type": "string", "max_length": 50},
+    {"name": "last_name", "type": "string", "max_length": 50},
+    {"name": "email", "type": "email"},
+    {"name": "password", "type": "string", "min_length": 8},
+    {"name": "age", "type": "integer", "min": 18, "max": 99},
+    {"name": "phone", "type": "string", "format": "US phone number"},
+    {"name": "zip_code", "type": "string", "format": "US zip code"}
+  ]
+}

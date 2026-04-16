@@ -1,0 +1,20 @@
+[
+  {
+    "first_name": "Emily",
+    "last_name": "Chen",
+    "email": "emilychen@example.com",
+    "password": "P@ssw0rd",
+    "age": 25,
+    "phone": "555-123-4567",
+    "zip_code": "10021"
+  },
+  {
+    "first_name": "Liam",
+    "last_name": "Brown",
+    "email": "liambrown@example.com",
+    "password": "Password123",
+    "age": 30,
+    "phone": "555-901-2345",
+    "zip_code": "90210"
+  }
+]

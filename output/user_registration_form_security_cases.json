@@ -1,0 +1,20 @@
+[
+  {
+    "first_name": "Robert'); DROP TABLE users; --",
+    "last_name": "Smith",
+    "email": "sqlinjection@example.com",
+    "password": "P@ssw0rd",
+    "age": 25,
+    "phone": "555-123-4567",
+    "zip_code": "10021"
+  },
+  {
+    "first_name": "XSS",
+    "last_name": "<script>alert('XSS')</script>",
+    "email": "xss@example.com",
+    "password": "XSSPassword123",
+    "age": 30,
+    "phone": "555-901-2345",
+    "zip_code": "90210"
+  }
+]

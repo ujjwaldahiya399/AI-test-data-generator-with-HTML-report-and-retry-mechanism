@@ -1,0 +1,9 @@
+{
+  "entity": "Login Form",
+  "fields": [
+    {"name": "email", "type": "email"},
+    {"name": "password", "type": "string", "min_length": 8},
+    {"name": "remember_me", "type": "boolean"},
+    {"name": "otp_code", "type": "string", "format": "6 digit number"}
+  ]
+}

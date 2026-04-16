@@ -1,0 +1,20 @@
+[
+  {
+    "first_name": "a",
+    "last_name": "b",
+    "email": "invalid",
+    "password": "short",
+    "age": 15,
+    "phone": "123",
+    "zip_code": "123"
+  },
+  {
+    "first_name": "verylongfirstname\u90a3\u662f\u5f88\u957f\u7684\u540d\u5b57",
+    "last_name": "verylonglastname_that_is_very_long",
+    "email": "invalid_email",
+    "password": "shortpassword",
+    "age": 100,
+    "phone": "1234567890123456",
+    "zip_code": "1234567890"
+  }
+]

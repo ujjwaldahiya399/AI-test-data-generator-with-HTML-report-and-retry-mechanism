@@ -1,0 +1,11 @@
+{
+  "entity": "Payment Form",
+  "fields": [
+    {"name": "card_holder_name", "type": "string", "max_length": 100},
+    {"name": "card_number", "type": "string", "format": "16 digit card number"},
+    {"name": "expiry_date", "type": "string", "format": "MM/YY"},
+    {"name": "cvv", "type": "string", "format": "3 digit number"},
+    {"name": "billing_address", "type": "string", "max_length": 200},
+    {"name": "amount", "type": "float", "min": 0.01, "max": 99999.99}
+  ]
+}

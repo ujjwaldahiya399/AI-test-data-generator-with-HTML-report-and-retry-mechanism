@@ -1,0 +1,18 @@
+[
+  {
+    "card_holder_name": "Invalid Name",
+    "card_number": "abc123",
+    "expiry_date": "12/25",
+    "cvv": "123",
+    "billing_address": "123 Main St, Anytown, USA 12345",
+    "amount": -1.0
+  },
+  {
+    "card_holder_name": "John Smith",
+    "card_number": "4532015112830366",
+    "expiry_date": "12/25",
+    "cvv": "12345",
+    "billing_address": "123 Main St, Anytown, USA 12345",
+    "amount": 100000.0
+  }
+]
