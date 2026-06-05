@@ -2,7 +2,7 @@
 
 ## Demo
 
-![Demo](demo2.gif)
+![Demo](demo.gif)
 
 ---
 

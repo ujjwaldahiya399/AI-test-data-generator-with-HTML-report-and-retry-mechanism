@@ -1,18 +1,18 @@
 [
   {
-    "card_holder_name": "John Smith",
+    "card_holder_name": "John Doe",
     "card_number": "4532015112830366",
     "expiry_date": "12/25",
     "cvv": "123",
-    "billing_address": "123 Main St, Anytown, USA 12345",
+    "billing_address": "123 Main St, New York, NY 10001",
     "amount": 10.99
   },
   {
-    "card_holder_name": "Jane Doe",
+    "card_holder_name": "Jane Smith",
     "card_number": "6011514433546201",
     "expiry_date": "06/28",
-    "cvv": "456",
-    "billing_address": "456 Elm St, Othertown, USA 67890",
+    "cvv": "987",
+    "billing_address": "456 Elm St, Los Angeles, CA 90001",
     "amount": 50.0
   }
 ]

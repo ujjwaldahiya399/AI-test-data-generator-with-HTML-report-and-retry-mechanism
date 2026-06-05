@@ -1,6 +1,8 @@
 from groq import Groq
 import os
 import json
+import re
+
 from pathlib import Path
 
 # Load API key
@@ -9,10 +11,8 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 # This is the core brain of the project
 # It takes a schema (description of a form/database), sends it to the AI,
 # and gets back organised test data in 4 categories: positive, negative, edge, and security cases.
+
 def generate_test_data(schema):
-    # Build the prompt — this is PROMPT ENGINEERING
-    # We tell the AI exactly what role to play, what to generate,
-    # and what format to return it in
     """Send schema to AI and get back categorised test data"""
     prompt = f"""
     You are an expert QA Engineer and SDET specializing in test data generation.
@@ -28,46 +28,24 @@ def generate_test_data(schema):
     - Make the data realistic and varied
     Schema: {json.dumps(schema, indent=2)}
     """
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": prompt}]
-    )
-    raw = response.choices[0].message.content
 
-    # Clean up response in case model adds markdown
-
-    # AI models sometimes wrap responses in markdown code blocks like:
-    # ```json
-    # {...}
-    # ```
-    # We need to strip that formatting to get pure JSON
-
-    raw = raw.strip()
-    if raw.startswith("```"):
-        raw = raw.split("```")[1]
-        if raw.startswith("json"):
-            raw = raw[4:]
-    raw = raw.strip()
-
-    # Sometimes AI returns slightly malformed JSON
-    # We retry up to 3 times before giving up
     for attempt in range(3):
         try:
-            return json.loads(raw)
-        except json.JSONDecodeError:
-            print(f"   JSON parse failed, retrying... (attempt {attempt + 1}/3)")
             response = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
-                messages=[{"role": "user", "content": prompt}]
+                messages=[
+                    {"role": "system", "content": "You are a JSON-only response bot. Return raw JSON with no markdown, no explanation, no extra text."},
+                    {"role": "user", "content": prompt}
+                ],
+                response_format={"type": "json_object"},
+                temperature=0
             )
             raw = response.choices[0].message.content.strip()
-            if raw.startswith("```"):
-                raw = raw.split("```")[1]
-                if raw.startswith("json"):
-                    raw = raw[4:]
-            raw = raw.strip()
+            raw = clean_json_response(raw)
+            return json.loads(raw)
+        except (json.JSONDecodeError, Exception) as e:
+            print(f"   JSON parse failed, retrying... (attempt {attempt + 1}/3)")
 
-    # If all retries failed, return empty structure so the rest of the code continues
     print(f"   Could not parse JSON after 3 attempts, skipping this schema")
     return {
         "positive_cases": [],
@@ -75,6 +53,26 @@ def generate_test_data(schema):
         "edge_cases": [],
         "security_cases": []
     }
+
+
+def clean_json_response(raw):
+    """Strip markdown fences and extract JSON object from AI response"""
+    raw = raw.strip()
+
+    # Remove markdown code blocks
+    if raw.startswith("```"):
+        raw = raw.split("```")[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+        raw = raw.strip()
+
+    # Fallback: regex to find the first { ... } block
+    if not raw.startswith("{"):
+        match = re.search(r'\{.*\}', raw, re.DOTALL)
+        if match:
+            raw = match.group()
+
+    return raw.strip()
 
 def save_categorised_output(entity_name, data):
     """Save each category into its own JSON file"""

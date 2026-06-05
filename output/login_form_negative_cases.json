@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "email": "invalid_email",
+    "password": "short",
+    "remember_me": true,
+    "otp_code": "123456"
+  },
+  {
+    "email": "user3@example.com",
+    "password": "Password123",
+    "remember_me": true,
+    "otp_code": "abc123"
+  }
+]

@@ -1,20 +1,20 @@
 [
   {
-    "first_name": "a",
-    "last_name": "b",
-    "email": "invalid",
+    "first_name": "",
+    "last_name": "Davis",
+    "email": "davis@example",
     "password": "short",
     "age": 15,
-    "phone": "123",
+    "phone": "1234567890",
     "zip_code": "123"
   },
   {
-    "first_name": "verylongfirstname\u90a3\u662f\u5f88\u957f\u7684\u540d\u5b57",
-    "last_name": "verylonglastname_that_is_very_long",
-    "email": "invalid_email",
-    "password": "shortpassword",
+    "first_name": "a\".repeat(51)",
+    "last_name": "Miller",
+    "email": "miller@example.com",
+    "password": "Password123",
     "age": 100,
-    "phone": "1234567890123456",
-    "zip_code": "1234567890"
+    "phone": "123-456-78901",
+    "zip_code": "123456"
   }
 ]

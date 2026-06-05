@@ -1,18 +1,18 @@
 [
   {
-    "card_holder_name": "Robert'); DROP TABLE Payments; --",
-    "card_number": "4532015112830366",
+    "card_holder_name": "<script>alert('XSS')</script>",
+    "card_number": "4111111111111111",
     "expiry_date": "12/25",
     "cvv": "123",
-    "billing_address": "123 Main St, Anytown, USA 12345",
+    "billing_address": "123 Main St, New York, NY 10001",
     "amount": 10.99
   },
   {
-    "card_holder_name": "John <script>alert('XSS')</script>",
-    "card_number": "6011514433546201",
-    "expiry_date": "06/28",
-    "cvv": "456",
-    "billing_address": "456 Elm St, Othertown, USA 67890",
+    "card_holder_name": "John Doe",
+    "card_number": "5105105105105100",
+    "expiry_date": "12/25",
+    "cvv": "123",
+    "billing_address": "123 Main St, New York, NY 10001; DROP TABLE users;",
     "amount": 50.0
   }
 ]

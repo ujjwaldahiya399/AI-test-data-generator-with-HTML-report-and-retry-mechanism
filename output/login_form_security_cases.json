@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "email": "user6@example.com",
+    "password": "Password123",
+    "remember_me": true,
+    "otp_code": "123456 OR 1=1"
+  },
+  {
+    "email": "<script>alert('XSS')</script>",
+    "password": "SecurePassword",
+    "remember_me": false,
+    "otp_code": "654321"
+  }
+]

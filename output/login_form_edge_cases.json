@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "email": "user4@example.com",
+    "password": "a\".repeat(8)",
+    "remember_me": true,
+    "otp_code": "000000"
+  },
+  {
+    "email": "user5@example.com",
+    "password": "z\".repeat(128)",
+    "remember_me": false,
+    "otp_code": "999999"
+  }
+]

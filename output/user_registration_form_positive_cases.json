@@ -2,19 +2,19 @@
   {
     "first_name": "Emily",
     "last_name": "Chen",
-    "email": "emilychen@example.com",
-    "password": "P@ssw0rd",
-    "age": 25,
-    "phone": "555-123-4567",
-    "zip_code": "10021"
+    "email": "emily.chen@example.com",
+    "password": "Password123",
+    "age": 30,
+    "phone": "123-456-7890",
+    "zip_code": "10001"
   },
   {
     "first_name": "Liam",
     "last_name": "Brown",
-    "email": "liambrown@example.com",
-    "password": "Password123",
-    "age": 30,
-    "phone": "555-901-2345",
+    "email": "liam.brown@example.com",
+    "password": "Password456",
+    "age": 40,
+    "phone": "987-654-3210",
     "zip_code": "90210"
   }
 ]
